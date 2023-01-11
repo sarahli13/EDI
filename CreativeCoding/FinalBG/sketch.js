@@ -17,8 +17,9 @@ function draw() {//runs in a loop
   var num = 30; //number of sides in the array
   var sideLen = windowWidth/num; // side length variable
 
-  for(var y=0; y<windowWidth; y+=sideLen){
-    for (var x=0; x<windowWidth; x+=sideLen){
+  translate(-150,-150);
+  for(var y=0; y < 2 * windowWidth; y+=sideLen){
+    for (var x=0; x < 2 * windowWidth; x+=sideLen){
       image(gif, x, y, windowWidth/num, windowWidth/num); //img for image
       // quad(i,j,
       //      i+sideLen,j,
@@ -34,4 +35,10 @@ function draw() {//runs in a loop
   //          i*300,j*300+300);
   //   }
   // }
+}
+
+function windowResized(){//allow window refresh with window resizing
+  resizeCanvas(windowWidth, windowHeight);
+
+
 }
